@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Candy
+  - Wall
+  - Goal
+  - Elevator
+  - "Z\u0131plama"
+  - Score Group
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ground
+  - Candy
+  - Wall
+  - Elevator
+  - "Z\u0131plama"
+  - Obstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Canvas
+    uniqueID: 3945490781
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Candys
+    uniqueID: 1535942403
+    locked: 0
+  - name: GroundParticle
+    uniqueID: 2739204323
+    locked: 0
+  - name: Next Level Canvas
+    uniqueID: 39997881
+    locked: 0
