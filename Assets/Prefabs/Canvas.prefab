@@ -1315,6 +1315,8 @@ MonoBehaviour:
   MusicSprite: {fileID: 21300000, guid: 672bd71d9498bbb45a784bb4af2d9445, type: 3}
   MutedSoundSprite: {fileID: 21300000, guid: 577c28eceb6cee54189246adf298a93c, type: 3}
   MutedMusicSprite: {fileID: 21300000, guid: fd5adf605412d384faa2de85d8da1ded, type: 3}
+  MusicStartValue: -15
+  SoundStartValue: 0
 --- !u!1 &7532215555160062609
 GameObject:
   m_ObjectHideFlags: 0

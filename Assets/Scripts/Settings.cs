@@ -12,21 +12,26 @@ public class Settings : MonoBehaviour
     private bool _didMuteMusic, _didMuteSound;
     public GameObject SettingsPanel;
     public Image SoundImage, MusicImage;
-
     public Sprite SoundSprite, MusicSprite, MutedSoundSprite, MutedMusicSprite;
+
+
+    public float MusicStartValue, SoundStartValue;
+
 
     void Start()
     {
-        ChangeSlidersVolue();
+        ChangeSlidersVolue(MusicStartValue, SoundStartValue);
+
+        MusicSlider.value = MusicStartValue;
+        SoundSlider.value = SoundStartValue;
     }
 
-    public void ChangeSlidersVolue()
+    public void ChangeSlidersVolue(float _MusicStartValue, float _SoundStartValue)
     {
-        if(PlayerPrefs.HasKey("Sound Volume"))
-            SoundSliderF(PlayerPrefs.GetFloat("Sound Volume"));
-        
-        if(PlayerPrefs.HasKey("Music Volume"))
-            MusicSliderF(PlayerPrefs.GetFloat("Music Volume"));
+        if (!PlayerPrefs.HasKey("Sound Volume"))
+            SoundSliderF(_SoundStartValue);
+        if (!PlayerPrefs.HasKey("Music Volume"))
+            MusicSliderF(_MusicStartValue);
     }
 
     public void SoundSliderF(float value)
