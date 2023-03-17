@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21618409e3cfeda4fac23a01cd579a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 3, y: 1}
+  Size: {x: 4, y: 2}
   mask:
     serializedVersion: 2
     m_Bits: 136

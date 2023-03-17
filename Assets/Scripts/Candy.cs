@@ -6,14 +6,14 @@ public class Candy : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] GameObject GoalEffect;
-    [SerializeField] GameObject FallEffect;
+    [SerializeField] Gradient graidnet;
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Goal"))
             Goal(collision.gameObject);
-        if (collision.gameObject.CompareTag("Ground"))
-            Ground(collision.gameObject);
     }
     private void Goal(GameObject Goal)
     {
@@ -21,9 +21,5 @@ public class Candy : MonoBehaviour
         gameManager.SetActiveImages();
         Destroy(gameObject);
     }
-    private void Ground(GameObject Ground)
-    {
-        if(GetComponent<Rigidbody2D>().velocity.y <= -1)
-        Instantiate(FallEffect, new Vector2(transform.position.x, transform.position.y - (transform.localScale.y / 2)), Quaternion.identity);
-    }
+    
 }
