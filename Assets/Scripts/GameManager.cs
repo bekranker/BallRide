@@ -25,24 +25,30 @@ public class GameManager : MonoBehaviour
     }
     public void SetActiveImages()
     {
-        if(Score + 1 >= 10)
-        {
-            _WinPanel.SetActive(true);
-            return;
-        }
         Score++;
         for (int i = 0; i < Score; i++)
         {
             ScoreImage[i].GetComponent<Image>().color = new Color(255, 255, 255, 1);
         }
+        if (Score >= 10)
+        {
+            _WinPanel.SetActive(true);
+        }
     }
 
-    private void NextSceneF() => StartCoroutine(NextScene());
-    IEnumerator NextScene()
+    public void NextSceneF() => StartCoroutine(GoScene(SceneManager.GetActiveScene().buildIndex + 1));
+    public void returnHome()
+    {
+        StartCoroutine(GoScene(0));
+    }
+    IEnumerator GoScene(int index)
     {
         _animation.SetTrigger("Out");
         yield return new WaitForSecondsRealtime(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().buildIndex + 1 != SceneManager.sceneCountInBuildSettings)
+            SceneManager.LoadScene(index);
+        else
+            SceneManager.LoadScene(0);
     }
     IEnumerator Restart()
     {

@@ -40,7 +40,9 @@ public class BlackHole : MonoBehaviour
         _object.GetComponent<Collider2D>().enabled = false;
         _object.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Instantiate(Effect, transform.position, Quaternion.identity);
+        Audio.PlayAudio("Portal", .5f, "General", "Sound");
         yield return new WaitForSecondsRealtime(.25f);
+        Audio.PlayAudio("Portal", .5f, "General", "Sound");
         _object.gameObject.transform.position = To.position;
         StartCoroutine(EndEffect());
         Instantiate(Effect, To.transform.position, Quaternion.identity);

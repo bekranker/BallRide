@@ -15,6 +15,7 @@ public class Jumpad : MonoBehaviour
             Vector2 direction = collision.GetContact(0).normal;
             if (direction.y <= .01f)
             {
+                Audio.PlayAudio("Jumpad", .5f, "General", "Sound");
                 GetComponent<Animator>().SetTrigger("Stress");
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * Force, ForceMode2D.Impulse);
             }

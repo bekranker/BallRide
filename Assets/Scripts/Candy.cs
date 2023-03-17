@@ -17,6 +17,7 @@ public class Candy : MonoBehaviour
     }
     private void Goal(GameObject Goal)
     {
+        Audio.PlayAudio("Goal", .5f, "General", "Sound");
         Instantiate(GoalEffect, Goal.transform.position, Quaternion.identity);
         gameManager.SetActiveImages();
         Destroy(gameObject);

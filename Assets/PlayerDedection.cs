@@ -19,6 +19,7 @@ public class PlayerDedection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Goal"))
         {
+            Audio.PlayAudio("Goal", .5f, "General", "Sound");
             Instantiate(_player.GroundEffect, collision.gameObject.transform.position, Quaternion.identity);
             _gameManager.SetActiveImages();
             gameObject.SetActive(false);
