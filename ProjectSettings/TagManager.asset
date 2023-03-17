@@ -11,6 +11,7 @@ TagManager:
   - Elevator
   - "Z\u0131plama"
   - Score Group
+  - GameManager
   layers:
   - Default
   - TransparentFX

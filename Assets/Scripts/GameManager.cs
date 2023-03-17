@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool IsCanRestartTheLevel = false;
     [SerializeField] Animator _animation;
     [SerializeField] List<GameObject> ScoreImage = new List<GameObject>();
+    [SerializeField] GameObject _WinPanel;
     private void Start()
     {
         StartCoroutine(Wait());
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(Score + 1 >= 10)
         {
-            StartCoroutine(NextScene());
+            _WinPanel.SetActive(true);
             return;
         }
         Score++;
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
             ScoreImage[i].GetComponent<Image>().color = new Color(255, 255, 255, 1);
         }
     }
+
+    private void NextSceneF() => StartCoroutine(NextScene());
     IEnumerator NextScene()
     {
         _animation.SetTrigger("Out");
