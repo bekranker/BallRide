@@ -11,7 +11,9 @@ public class Settings : MonoBehaviour
     public AudioMixer _AudioMixer;
     private bool _didMuteMusic, _didMuteSound;
     public GameObject SettingsPanel;
+    public Image SoundImage, MusicImage;
 
+    public Sprite SoundSprite, MusicSprite, MutedSoundSprite, MutedMusicSprite;
 
     void Start()
     {
@@ -33,19 +35,29 @@ public class Settings : MonoBehaviour
         _AudioMixer.SetFloat("Sound", value);
         if (value == SoundSlider.minValue)
         {
+            SoundImage.sprite = MutedSoundSprite;
             _didMuteSound = true;
         }
         else
+        {
             _didMuteSound = false;
+            SoundImage.sprite = SoundSprite;
+        }
     }
     public void MusicSliderF(float value)
     {
         PlayerPrefs.SetFloat("Music Volume", value);
         _AudioMixer.SetFloat("Music", value);
         if (value == MusicSlider.minValue)
+        {
+            MusicImage.sprite = MutedMusicSprite;
             _didMuteMusic = true;
+        }
         else
+        {
+            MusicImage.sprite = MusicSprite;
             _didMuteMusic = false;
+        }
     }
 
     public void SetSound()
@@ -59,10 +71,14 @@ public class Settings : MonoBehaviour
 
         if (_didMuteSound)
         {
+            SoundImage.sprite = MutedSoundSprite;
             _AudioMixer.SetFloat("Sound", SoundSlider.value);
         }
         else
+        {
+            SoundImage.sprite = SoundSprite;
             _AudioMixer.SetFloat("Sound", -80);
+        }
 
     }
     public void SetMusic()
@@ -76,10 +92,14 @@ public class Settings : MonoBehaviour
 
         if (_didMuteMusic)
         {
+            MusicImage.sprite = MutedMusicSprite;
             _AudioMixer.SetFloat("Music", MusicSlider.value);
         }
         else
+        {
+            MusicImage.sprite = MusicSprite;
             _AudioMixer.SetFloat("Music", -80);
+        }
 
     }
 
@@ -88,5 +108,8 @@ public class Settings : MonoBehaviour
     {
         SettingsPanel.SetActive(false);
     }
-
+    public void OpenPanel()
+    {
+        SettingsPanel.SetActive(true);
+    }
 }

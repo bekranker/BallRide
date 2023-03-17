@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField, Range(0f, 100f)] private float _maxSpeed = 4f;
     [SerializeField, Range(0f, 100f)] private float _maxAcceleration = 35f;
     [SerializeField, Range(0f, 100f)] private float _maxAirAcceleration = 20f;
+    [SerializeField, Range(0f, 100f)] private float _MaxSpeed;
 
     private Vector2 _direction, _desiredVelocity, _velocity;
     private Rigidbody2D _body;
@@ -24,8 +25,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _direction.x = Input.GetAxisRaw("Horizontal");
+        _direction.x = Input.GetAxis("Horizontal");
         _desiredVelocity = new Vector2(_direction.x, 0f) * Mathf.Max(_maxSpeed - _ground.Friction, 0f);
+    
+        if(_body.velocity.magnitude > _MaxSpeed)
+        {
+            _body.velocity = Vector3.ClampMagnitude(_body.velocity, _MaxSpeed);
+        }
     }
 
     private void FixedUpdate()

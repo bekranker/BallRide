@@ -61,6 +61,9 @@ TagManager:
   - name: GroundParticle
     uniqueID: 2739204323
     locked: 0
+  - name: Settings
+    uniqueID: 4182602783
+    locked: 0
   - name: Next Level Canvas
     uniqueID: 39997881
     locked: 0
