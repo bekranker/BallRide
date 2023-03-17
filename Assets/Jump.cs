@@ -14,8 +14,7 @@ public class Jump : MonoBehaviour
     private Ground _ground;
     private Vector2 _velocity;
 
-    private int _jumpPhase;
-    private float _defaultGravityScale, _jumpSpeed;
+    [SerializeField,Range(1, 100)] float _jumpSpeed;
 
     private bool _desiredJump, _onGround;
 
@@ -26,7 +25,6 @@ public class Jump : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
         _ground = GetComponent<Ground>();
 
-        _defaultGravityScale = 1f;
     }
 
     // Update is called once per frame
@@ -40,49 +38,32 @@ public class Jump : MonoBehaviour
         _onGround = _ground.OnGround;
         _velocity = _body.velocity;
 
-        if (_onGround)
-        {
-            _jumpPhase = 0;
-        }
-
         if (_desiredJump)
         {
             _desiredJump = false;
             JumpAction();
         }
 
-        if (_body.velocity.y > 0)
-        {
-            _body.gravityScale = _upwardMovementMultiplier;
-        }
-        else if (_body.velocity.y < 0)
-        {
-            _body.gravityScale = _downwardMovementMultiplier;
-        }
-        else if (_body.velocity.y == 0)
-        {
-            _body.gravityScale = _defaultGravityScale;
-        }
+        //if (_body.velocity.y > 0)
+        //{
+        //    _body.gravityScale = _upwardMovementMultiplier;
+        //}
+        //else if (_body.velocity.y < 0)
+        //{
+        //    _body.gravityScale = _downwardMovementMultiplier;
+        //}
+        //else if (_body.velocity.y == 0)
+        //{
+        //    _body.gravityScale = _defaultGravityScale;
+        //}
 
-        _body.velocity = _velocity;
+        //_body.velocity = _velocity;
     }
     private void JumpAction()
     {
-        if (_onGround || _jumpPhase < _maxAirJumps)
+        if (_onGround)
         {
-            _jumpPhase += 1;
-
-            _jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * _jumpHeight);
-
-            if (_velocity.y > 0f)
-            {
-                _jumpSpeed = Mathf.Max(_jumpSpeed - _velocity.y, 0f);
-            }
-            else if (_velocity.y < 0f)
-            {
-                _jumpSpeed += Mathf.Abs(_body.velocity.y);
-            }
-            _velocity.y += _jumpSpeed;
+            _body.AddForce(_jumpSpeed * Vector2.up * 20);
         }
     }
 }

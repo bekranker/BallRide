@@ -4568,6 +4568,7 @@ MonoBehaviour:
   _maxAirJumps: 0
   _downwardMovementMultiplier: 0.85
   _upwardMovementMultiplier: 2
+  _jumpSpeed: 19
 --- !u!1 &1613483484
 GameObject:
   m_ObjectHideFlags: 0
