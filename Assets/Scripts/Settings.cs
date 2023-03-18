@@ -24,6 +24,7 @@ public class Settings : MonoBehaviour
 
         MusicSlider.value = MusicStartValue;
         SoundSlider.value = SoundStartValue;
+
     }
 
     public void ChangeSlidersVolue(float _MusicStartValue, float _SoundStartValue)
@@ -77,12 +78,12 @@ public class Settings : MonoBehaviour
         if (_didMuteSound)
         {
             SoundImage.sprite = MutedSoundSprite;
-            _AudioMixer.SetFloat("Sound", SoundSlider.value);
+            _AudioMixer.SetFloat("Sound", -80);
         }
         else
         {
             SoundImage.sprite = SoundSprite;
-            _AudioMixer.SetFloat("Sound", -80);
+            _AudioMixer.SetFloat("Sound", SoundSlider.value);
         }
 
     }
@@ -98,12 +99,12 @@ public class Settings : MonoBehaviour
         if (_didMuteMusic)
         {
             MusicImage.sprite = MutedMusicSprite;
-            _AudioMixer.SetFloat("Music", MusicSlider.value);
+            _AudioMixer.SetFloat("Music", -80);
         }
         else
         {
             MusicImage.sprite = MusicSprite;
-            _AudioMixer.SetFloat("Music", -80);
+            _AudioMixer.SetFloat("Music", MusicSlider.value);
         }
 
     }
