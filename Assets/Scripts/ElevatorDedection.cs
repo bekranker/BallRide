@@ -19,7 +19,7 @@ public class ElevatorDedection : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        collision.gameObject.transform.SetParent(gameObject.transform);
+        //collision.gameObject.transform.SetParent(gameObject.transform);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

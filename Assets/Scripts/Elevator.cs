@@ -28,7 +28,6 @@ public class Elevator : MonoBehaviour
         if (_canGo)
         {
             gameObject.transform.position = Vector3.MoveTowards(transform.position, points[index].position, Speed * Time.deltaTime);
-            //gameObject.transform.DOMove(points[index].position, Speed, false);
             _did = true;
             _canGo = false;
         }
