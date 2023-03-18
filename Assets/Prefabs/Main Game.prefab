@@ -5245,6 +5245,14 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.r
       value: 0.09549664
       objectReference: {fileID: 0}
+    - target: {fileID: 545466268582728219, guid: 06d0085affab3794b9d933f7e860a7b3, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545466268582728219, guid: 06d0085affab3794b9d933f7e860a7b3, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.6794872
+      objectReference: {fileID: 0}
     - target: {fileID: 4645078855426073320, guid: 06d0085affab3794b9d933f7e860a7b3, type: 3}
       propertyPath: m_Color.b
       value: 0.78039217

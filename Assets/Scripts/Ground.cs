@@ -30,9 +30,9 @@ public class Ground : MonoBehaviour
 
     private void EvaluateCollision(Collision2D collision)
     {
-        for (int i = 0; i < collision.contactCount; i++)
+        Vector2 direction = collision.GetContact(0).normal;
+        if (direction.y > .1f)
         {
-            _normal = collision.GetContact(i).normal;
             OnGround = true;
         }
     }

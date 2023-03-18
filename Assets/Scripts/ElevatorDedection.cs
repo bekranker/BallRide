@@ -16,32 +16,10 @@ public class ElevatorDedection : MonoBehaviour
         Gizmos.DrawWireCube(transform.position, Size);
     }
 
-
-    private void FixedUpdate()
-    {
-
-        if(Physics2D.OverlapBox(transform.position, Size, 0, mask))
-        {
-            balls = Physics2D.OverlapBoxAll(transform.position, Size, 0, mask);
-
-            foreach (Collider2D ball in balls)
-            {
-                ball.transform.SetParent(gameObject.transform);
-            }
-        }
-        else
-        {
-            foreach (Collider2D ball in balls)
-            {
-                ball.transform.SetParent(null);
-            }
-        }
-    }
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.transform.SetParent(this.gameObject.transform);
+        collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        collision.gameObject.transform.SetParent(gameObject.transform);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

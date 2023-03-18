@@ -46,9 +46,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Canvas
-    uniqueID: 3945490781
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -63,6 +60,9 @@ TagManager:
     locked: 0
   - name: GroundParticle
     uniqueID: 2739204323
+    locked: 0
+  - name: Canvas
+    uniqueID: 3945490781
     locked: 0
   - name: Settings
     uniqueID: 4182602783
