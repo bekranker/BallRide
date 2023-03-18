@@ -3023,6 +3023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5236407994844242579, guid: bfe38cd7e6763e042896f24c9271dae6, type: 3}
+      propertyPath: Speed
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 5236407994844242581, guid: bfe38cd7e6763e042896f24c9271dae6, type: 3}
       propertyPath: m_Name
       value: obstacle (1)
