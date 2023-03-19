@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class Singleton : MonoBehaviour
 {
+    public GameObject me;
+
+    private AudioSource _bg;
+
     private void Awake()
     {
         #region Singelton
         List<Singleton> me = FindObjectsOfType<Singleton>().ToList();
 
-
+       
         if (me != null)
         {
             for (int i = 0; i < me.Count; i++)
@@ -19,7 +23,7 @@ public class Singleton : MonoBehaviour
                 print(me[i].name);
 
                 if (me[i] != this)
-                    Destroy(gameObject);
+                    Destroy(me[i]);
                 else
                     DontDestroyOnLoad(this);
             }
@@ -28,4 +32,5 @@ public class Singleton : MonoBehaviour
             DontDestroyOnLoad(this);
         #endregion
     }
+
 }

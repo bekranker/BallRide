@@ -20,19 +20,9 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        ChangeSlidersVolue(MusicStartValue, SoundStartValue);
-
-        MusicSlider.value = MusicStartValue;
-        SoundSlider.value = SoundStartValue;
-
-    }
-
-    public void ChangeSlidersVolue(float _MusicStartValue, float _SoundStartValue)
-    {
-        if (!PlayerPrefs.HasKey("Sound Volume"))
-            SoundSliderF(_SoundStartValue);
-        if (!PlayerPrefs.HasKey("Music Volume"))
-            MusicSliderF(_MusicStartValue);
+        CheckMusic();
+        CheckSound();
+            
     }
 
     public void SoundSliderF(float value)
@@ -48,6 +38,7 @@ public class Settings : MonoBehaviour
         {
             _didMuteSound = false;
             SoundImage.sprite = SoundSprite;
+
         }
     }
     public void MusicSliderF(float value)
@@ -79,11 +70,14 @@ public class Settings : MonoBehaviour
         {
             SoundImage.sprite = MutedSoundSprite;
             _AudioMixer.SetFloat("Sound", -80);
+            PlayerPrefs.SetString("Muted Sound", "Muted Sound");
         }
         else
         {
             SoundImage.sprite = SoundSprite;
             _AudioMixer.SetFloat("Sound", SoundSlider.value);
+
+                PlayerPrefs.DeleteKey("Muted Sound");
         }
 
     }
@@ -100,15 +94,70 @@ public class Settings : MonoBehaviour
         {
             MusicImage.sprite = MutedMusicSprite;
             _AudioMixer.SetFloat("Music", -80);
+            PlayerPrefs.SetString("Muted Music", "Muted Music");
         }
         else
         {
             MusicImage.sprite = MusicSprite;
             _AudioMixer.SetFloat("Music", MusicSlider.value);
+            if (PlayerPrefs.HasKey("Muted Music"))
+                PlayerPrefs.DeleteKey("Muted Music");
         }
 
     }
 
+
+    private void CheckMusic()
+    {
+        if (PlayerPrefs.HasKey("Music Volume"))
+        {
+            MusicSlider.value = PlayerPrefs.GetFloat("Music Volume");
+            if (PlayerPrefs.HasKey("Muted Music"))
+            {
+                _AudioMixer.SetFloat("Music", -80);
+                MusicImage.sprite = MutedMusicSprite;
+                _didMuteMusic = !_didMuteMusic;
+            }
+            else
+            {
+                MusicImage.sprite = MusicSprite;
+                _AudioMixer.SetFloat("Music", PlayerPrefs.GetFloat("Music Volume"));
+            }
+        }
+        else
+        {
+            _AudioMixer.SetFloat("Music", MusicStartValue);
+            PlayerPrefs.SetFloat("Music Volume", MusicStartValue);
+            MusicSlider.value = MusicStartValue;
+        }
+
+    }
+
+    private void CheckSound()
+    {
+        if(PlayerPrefs.HasKey("Sound Volume"))
+        {
+            SoundSlider.value = PlayerPrefs.GetFloat("Sound Volume");
+            if (PlayerPrefs.HasKey("Muted Sound"))
+            {
+                _AudioMixer.SetFloat("Sound", -80);
+                SoundImage.sprite = MutedSoundSprite;
+                _didMuteSound = !_didMuteSound;
+            }
+            else
+            {
+                SoundImage.sprite = SoundSprite;
+                _AudioMixer.SetFloat("Sound", PlayerPrefs.GetFloat("Sound Volume"));
+            }   
+        }
+        else
+        {
+            _AudioMixer.SetFloat("Sound", SoundStartValue);
+            PlayerPrefs.SetFloat("Sound Volume", SoundStartValue);
+            SoundSlider.value = SoundStartValue;
+        }
+        
+    }
 
     public void ClosePanel()
     {

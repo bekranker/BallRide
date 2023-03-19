@@ -569,9 +569,5 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 8025443866413929374, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
-      propertyPath: SoundStartValue
-      value: -15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
