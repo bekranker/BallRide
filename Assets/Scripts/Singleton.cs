@@ -23,7 +23,7 @@ public class Singleton : MonoBehaviour
                 print(me[i].name);
 
                 if (me[i] != this)
-                    Destroy(me[i]);
+                    Destroy(gameObject);
                 else
                     DontDestroyOnLoad(this);
             }
