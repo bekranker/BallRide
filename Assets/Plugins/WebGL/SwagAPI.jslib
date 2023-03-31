@@ -2,7 +2,7 @@ mergeInto(LibraryManager.library, {
 	swagApi: null,
 
 	SWAG_Init: function (gameKey, domObj, platform) {
-	    var game = document.getElementById(Pointer_stringify (domObj));
+		var game = document.getElementById(Pointer_stringify (domObj));
 		platform = document.getElementById(Pointer_stringify (platform));
 		
 		if (game == undefined)	
@@ -19,14 +19,14 @@ mergeInto(LibraryManager.library, {
 	SWAG_StartSession: function () {
 		swagApi.startSession ()
 			.then (function (){
-				unityInstance.SendMessage('SwagObj', 'StartSessionComplete');
+				window.unityInstance.SendMessage('SwagObj', 'StartSessionComplete');
 			});
 	},
 
 	SWAG_ShowBrandingAnimation: function (devElement) {
 		document.swagBrandingShown = 0;
-        SWAGAPI.showBrandingAnimation (Pointer_stringify(devElement), function (){
-			unityInstance.SendMessage('SwagObj', 'BrandingAnimationShown');
+		SWAGAPI.showBrandingAnimation (Pointer_stringify(devElement), function (){
+			window.unityInstance.SendMessage('SwagObj', 'BrandingAnimationShown');
 			document.swagBrandingShown = 1;
 		});
 	},
@@ -36,7 +36,7 @@ mergeInto(LibraryManager.library, {
 		if (document.swagBrandingShown)
 			data = "true";
 		
-		unityInstance.SendMessage('SwagObj', 'HasBrandingAnimationShownComplete', data);
+		window.unityInstance.SendMessage('SwagObj', 'HasBrandingAnimationShownComplete', data);
 	},
 		
 	SWAG_PostScore: function (level_key, score) {
@@ -44,7 +44,7 @@ mergeInto(LibraryManager.library, {
 	},
 
 	SWAG_PostDailyScore: function (date, level_key, score) {
-        swagApi.postDailyScore (Pointer_stringify(date), Pointer_stringify(level_key), score);
+		swagApi.postDailyScore (Pointer_stringify(date), Pointer_stringify(level_key), score);
 	},
 		
 	SWAG_GetScores: function (level_key, type, period, current_user, target_date, use_daily, value_formatter) {
@@ -74,7 +74,7 @@ mergeInto(LibraryManager.library, {
 				value_formatter: value_formatter
 			})
 			.then(function(data) {
-				unityInstance.SendMessage('SwagObj', 'GetScoresComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'GetScoresComplete', JSON.stringify (data));
 			});
 	},
 
@@ -95,13 +95,13 @@ mergeInto(LibraryManager.library, {
 	
 	SWAG_GetCurrentEntity: function () {
 		var data = JSON.stringify(swagApi.getCurrentEntity());
-		unityInstance.SendMessage('SwagObj', 'GetCurrentEntityComplete', data);
+		window.unityInstance.SendMessage('SwagObj', 'GetCurrentEntityComplete', data);
 	},
 	
 	SWAG_GetUserDatastore: function () {
 		swagApi.getUserDatastore()
 			.then(function(data) {
-				unityInstance.SendMessage('SwagObj', 'GetUserDatastoreComplete', JSON.stringify(data));
+				window.unityInstance.SendMessage('SwagObj', 'GetUserDatastoreComplete', JSON.stringify(data));
 			});
 	},
 	
@@ -112,7 +112,7 @@ mergeInto(LibraryManager.library, {
 	SWAG_StartGame: function () {
 		swagApi.startGame()
 			.then(function() {
-				unityInstance.SendMessage('SwagObj', 'StartGameComplete');
+				window.unityInstance.SendMessage('SwagObj', 'StartGameComplete');
 			});
 	},
 	
@@ -120,21 +120,21 @@ mergeInto(LibraryManager.library, {
 		var data = JSON.parse (Pointer_stringify (options));
 		swagApi.endGame(data)
 			.then(function() {
-				unityInstance.SendMessage('SwagObj', 'EndGameComplete');
+				window.unityInstance.SendMessage('SwagObj', 'EndGameComplete');
 			});
 	},
 	
 	SWAG_ShowAd: function () {
 		swagApi.startGame()
 			.then(function() {
-				unityInstance.SendMessage('SwagObj', 'ShowAdComplete');
+				window.unityInstance.SendMessage('SwagObj', 'ShowAdComplete');
 			});
 	},
 
 	SWAG_GetScoreCategories: function () {
 		swagApi.getScoreCategories()
 			.then(function(data) {
-				unityInstance.SendMessage('SwagObj', 'GetScoreCategoriesComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'GetScoreCategoriesComplete', JSON.stringify (data));
 			});
 	},
 
@@ -145,7 +145,7 @@ mergeInto(LibraryManager.library, {
 					subscriber: subscriber
 				};
 				
-				unityInstance.SendMessage('SwagObj', 'IsSubscriberComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'IsSubscriberComplete', JSON.stringify (data));
 			});
 	},
 
@@ -156,21 +156,21 @@ mergeInto(LibraryManager.library, {
 				var data = {
 					dailyScore: hasScore
 				};
-				unityInstance.SendMessage('SwagObj', 'HasDailyScoreComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'HasDailyScoreComplete', JSON.stringify (data));
 			});
 	},
 	
 	SWAG_GetCurrentDay: function () {
 		swagApi.getCurrentDay ()
 			.then(function(data) {
-				unityInstance.SendMessage('SwagObj', 'GetCurrentDayComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'GetCurrentDayComplete', JSON.stringify (data));
 			});
 	},
 	
 	SWAG_GetAchievementCategories: function () {
 		swagApi.getAchievementCategories()
 			.then(function(data) {
-				unityInstance.SendMessage('SwagObj', 'GetAchievementCategoriesComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'GetAchievementCategoriesComplete', JSON.stringify (data));
 			});
 	},
 
@@ -183,9 +183,7 @@ mergeInto(LibraryManager.library, {
 		swagApi.getUserAchievements()
 			.then(function(data) {
 				console.log (data);
-				unityInstance.SendMessage('SwagObj', 'SWAG_GetUserAchievementsComplete', JSON.stringify (data));
+				window.unityInstance.SendMessage('SwagObj', 'SWAG_GetUserAchievementsComplete', JSON.stringify (data));
 			});
 	},
-
-
 });

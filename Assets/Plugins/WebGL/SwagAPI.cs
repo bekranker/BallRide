@@ -69,24 +69,35 @@ public class SwagAPI : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void SWAG_HasBrandingAnimationShown();
     
+    public GameObject initBtn;
+    public GameObject StartSessionBtn;
 
     bool inited = false;
 
+    // Start is called before the first frame update
     void Start()
     {
-#if !UNITY_EDITOR
-        
-        HasBrandingAnimationShown();
-#else
-        print("In Unity Editor");
-#endif
+        StartSessionBtn.SetActive(false);
+
+        HasBrandingAnimationShown ();
+    }
+
+    void Update()
+    {
 
     }
 
+    public string APIKey = "5c6c3c056917a692f96f9651";
+    public string DOMElementID = "swag";
+    public string Platform = "shockwave";
+
     public void InitSwag()
     {
-        SWAG_Init("5c6c3c056917a692f96f9651", "swag", "shockwave");
+        initBtn.SetActive(false);
+        SWAG_Init(this.APIKey, this.DOMElementID, this.Platform);
         inited = true;
+
+        StartSessionBtn.SetActive(true);
     }
 
     public void StartSession()
