@@ -72,18 +72,17 @@ public class SwagAPI : MonoBehaviour
 
     bool inited = false;
 
-    // Start is called before the first frame update
     void Start()
     {
+#if !UNITY_EDITOR
+        
         HasBrandingAnimationShown();
+#else
+        print("In Unity Editor");
+#endif
+
     }
 
-    void Update()
-    {
-
-    }
-
-    // Update is called once per frame
     public void InitSwag()
     {
         SWAG_Init("5c6c3c056917a692f96f9651", "swag", "shockwave");

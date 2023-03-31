@@ -10,7 +10,6 @@ public class Elevator : MonoBehaviour
     [Range(0.001f, 10)] [SerializeField] float SleepTime;
 
     public int index = 1;
-    private bool IsCanMove = true;
     public bool Turn = true;
     private bool _did, _canGo;
 
