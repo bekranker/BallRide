@@ -181,10 +181,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can easly move with arrow keys
+  m_text: Use the arrow keys or WASD to move
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
-  m_sharedMaterial: {fileID: 1243248561570774829, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
+  m_sharedMaterial: {fileID: -560258530502095055, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -208,13 +208,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.25
+  m_fontSize: 16.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -316,10 +316,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Roll your all balls to goal. Just press R if you stuck
+  m_text: Roll all the balls to the goal. Press R to restart the level !
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
-  m_sharedMaterial: {fileID: 1243248561570774829, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
+  m_sharedMaterial: {fileID: -560258530502095055, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -343,13 +343,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 13.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
@@ -570,6 +570,46 @@ PrefabInstance:
     - target: {fileID: 8025443866413929368, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443866473477140, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443866473477140, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443866788317480, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443866788317480, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443866788317480, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443867258719019, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443867258719019, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443868069504577, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443868069504577, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025443868069504577, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399456907087130890, guid: 017f17780421d6446bc2d75aee6a711a, type: 3}
       propertyPath: m_LocalPosition.y

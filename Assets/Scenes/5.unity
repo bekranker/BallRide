@@ -438,7 +438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.48498, y: 167.07501}
+  m_AnchoredPosition: {x: -95.67522, y: 186.5033}
   m_SizeDelta: {x: 227.82, y: 71.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429911049
@@ -461,10 +461,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This elevator helps carry you candies
+  m_text: This elevator helps lift your candies.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
-  m_sharedMaterial: {fileID: 1243248561570774829, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
+  m_sharedMaterial: {fileID: -560258530502095055, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
+  m_fontSize: 19.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -799,7 +799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.47004, y: -52.408005}
+  m_AnchoredPosition: {x: 137.89832, y: -52.408005}
   m_SizeDelta: {x: 304.62, y: 71.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419243032
@@ -822,10 +822,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If you stuck just press R for restart the lelvel
+  m_text: Press R to restart the level if you're stuck
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
-  m_sharedMaterial: {fileID: 1243248561570774829, guid: 51b254759bc0a2647bfe9410102b4768, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
+  m_sharedMaterial: {fileID: -560258530502095055, guid: d29894f5a47a61c47b35e273d8430c52, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.3
+  m_fontSize: 23.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.49
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
